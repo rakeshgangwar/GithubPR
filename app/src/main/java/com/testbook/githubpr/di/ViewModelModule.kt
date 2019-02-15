@@ -22,5 +22,5 @@ abstract class ViewModelModule {
     abstract fun bindResultViewModel(resultViewModel: ResultViewModel): ViewModel
 
     @Binds
-    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
+    abstract fun bindViewModelFactory(factory: GithubViewModelFactory): ViewModelProvider.Factory
 }

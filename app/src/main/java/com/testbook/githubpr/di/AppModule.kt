@@ -1,6 +1,8 @@
 package com.testbook.githubpr.di
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.testbook.githubpr.BuildConfig
+import com.testbook.githubpr.network.GithubService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -18,6 +20,7 @@ class AppModule {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.API_ENDPOINT)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .client(okHttpClient)
             .build()
     }
@@ -30,5 +33,11 @@ class AppModule {
             .readTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)
             .build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideGithubService(retrofit: Retrofit): GithubService {
+        return retrofit.create(GithubService::class.java)
     }
 }

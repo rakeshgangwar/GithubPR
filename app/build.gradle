@@ -15,7 +15,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "API_ENDPOINT", "\"https://api.github.com/api/v3\""
+        buildConfigField "String", "API_ENDPOINT", "\"https://api.github.com/\""
+        buildConfigField "String", "API_KEY", "\"f7b14a7a4e6131397f1e9a1e96cb86d54043db7c\""
     }
     buildTypes {
         release {
@@ -46,4 +47,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0-beta02'
 }
