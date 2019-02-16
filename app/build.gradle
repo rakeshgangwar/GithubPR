@@ -43,10 +43,9 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.16'
     implementation 'com.google.dagger:dagger-android:2.16'
     implementation 'com.google.dagger:dagger-android-support:2.16'
+    implementation 'com.airbnb.android:lottie:3.0.0-beta1'
     kapt "com.google.dagger:dagger-compiler:2.16"
     kapt "com.google.dagger:dagger-android-processor:2.16"
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
     implementation 'android.arch.navigation:navigation-fragment:1.0.0-beta02'
+    implementation "android.arch.navigation:navigation-ui-ktx:1.0.0-beta02"
 }

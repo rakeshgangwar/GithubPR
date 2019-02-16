@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.testbook.githubpr.R
 import com.testbook.githubpr.models.Repo
 
-class RepoAdapter(private val repos: List<Repo>) : RecyclerView.Adapter<RepoAdapter.RepoViewHolder>() {
+class RepoAdapter(private val repos: List<Repo>, private val listener: InteractionListener) : RecyclerView.Adapter<RepoAdapter.RepoViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
         return RepoViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_repo, parent, false))
     }
@@ -27,7 +27,7 @@ class RepoAdapter(private val repos: List<Repo>) : RecyclerView.Adapter<RepoAdap
 
         holder.itemView.findViewById<TextView>(R.id.repo_language).text = repos[position].language
         holder.itemView.setOnClickListener {
-            Log.d("", "")
+            listener.openResult(repos[position].name)
         }
     }
 
